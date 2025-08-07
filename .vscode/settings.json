@@ -1,0 +1,67 @@
+{
+    "rust-analyzer.showUnlinkedFileNotification": false,
+    "rust-analyzer.check.command": "clippy",
+    "rust-analyzer.cargo.buildScripts.enable": false,
+    "rust-analyzer.cargo.features": "all",
+    "rust-analyzer.inlayHints.closureCaptureHints.enable": true,
+    "rust-analyzer.inlayHints.closureReturnTypeHints.enable": "always",
+    "rust-analyzer.inlayHints.implicitDrops.enable": false,
+    "rust-analyzer.inlayHints.discriminantHints.enable": "always",
+    "rust-analyzer.inlayHints.expressionAdjustmentHints.enable": "always",
+    "rust-analyzer.hover.memoryLayout.alignment": "both",
+    "rust-analyzer.inlayHints.bindingModeHints.enable": true,
+    "rust-analyzer.inlayHints.lifetimeElisionHints.enable": "always",
+    "rust-analyzer.diagnostics.warningsAsInfo": [
+        "unused_variables",
+        "dead_code",
+        "unused_imports",
+        "macro_error"
+    ],
+    "errorLens.enabledDiagnosticLevels": [
+        "error",
+        "warning"
+    ],
+    "rust-analyzer.restartServerOnConfigChange": true,
+    "rust-analyzer.imports.prefix": "plain",
+    "rust-analyzer.inlayHints.lifetimeElisionHints.useParameterNames": true,
+    "rust-analyzer.inlayHints.reborrowHints.enable": "always",
+    "rust-analyzer.interpret.tests": true,
+    "rust-analyzer.lens.references.trait.enable": false,
+    "rust-analyzer.lens.references.method.enable": false,
+    "rust-analyzer.lens.references.adt.enable": false,
+    "rust-analyzer.lens.references.enumVariant.enable": false,
+    "rust-analyzer.typing.autoClosingAngleBrackets.enable": true,
+    "lldb.displayFormat": "auto",
+    "lldb.showDisassembly": "always",
+    "lldb.dereferencePointers": true,
+    "lldb.consoleMode": "commands",
+    "rust-analyzer.diagnostics.experimental.enable": true,
+    "files.insertFinalNewline": true,
+    "editor.formatOnSave": false,
+    "files.trimTrailingWhitespace": true,
+    "editor.semanticTokenColorCustomizations": {
+        "rules": {
+            "*.unsafe.rust": "#eb5046"
+        }
+    },
+    "files.exclude": {
+        "target/**": true
+    },
+    "rust-analyzer.hover.actions.references.enable": true,
+    "rust-analyzer.cargo.noDefaultFeatures": true,
+    "rust-analyzer.check.invocationLocation": "root",
+    "evenBetterToml.formatter.reorderArrays": true,
+    "evenBetterToml.formatter.reorderKeys": true,
+    "evenBetterToml.formatter.arrayTrailingComma": false,
+    "evenBetterToml.formatter.arrayAutoExpand": true,
+    "evenBetterToml.formatter.arrayAutoCollapse": true,
+    "evenBetterToml.taplo.configFile.enabled": true,
+    "evenBetterToml.taplo.configFile.path": "talpo.toml",
+    "rust-analyzer.inlayHints.genericParameterHints.lifetime.enable": true,
+    "rust-analyzer.inlayHints.genericParameterHints.type.enable": true,
+    "rust-analyzer.inlayHints.implicitSizedBoundHints.enable": true,
+    "rust-analyzer.inlayHints.rangeExclusiveHints.enable": true,
+    "rust-analyzer.diagnostics.disabled": [
+        "E0308"
+    ]
+}

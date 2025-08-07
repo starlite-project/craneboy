@@ -1,0 +1,13 @@
+[build]
+rustdocflags = ["--cfg", "docsrs", "--show-type-layout", "-Z", "unstable-options"]
+rustflags = ["-C", "target-cpu=native"]
+
+[alias]
+mutate = "mutants --test-tool=nextest -v -V --all-features"
+remutate = "mutants --test-tool=nextest -v -V --iterate --all-features"
+coverage = "llvm-cov nextest --lcov --output-path ./target/lcov.info --workspace"
+feature-check = "hack check --feature-powerset --no-dev-deps"
+full-doc = "doc --keep-going --all-features -Zrustdoc-map -Zrustdoc-scrape-examples"
+
+[doc.extern-map.registries]
+crates-io = "https://docs.rs/"

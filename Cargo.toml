@@ -1,6 +1,73 @@
 [package]
 name = "craneboy"
-version = "0.1.0"
-edition = "2024"
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+version.workspace = true
 
 [dependencies]
+
+[workspace]
+resolver = "3"
+
+[workspace.lints.rust]
+elided_lifetimes_in_paths = "warn"
+missing_copy_implementations = "warn"
+
+[workspace.lints.clippy]
+borrow_as_ptr = "deny"
+cast_possible_truncation = "allow"
+cast_possible_wrap = "allow"
+cast_precision_loss = "allow"
+cast_ptr_alignment = "allow"
+cast_sign_loss = "allow"
+cognitive_complexity = "allow"
+disallowed_methods = "deny"
+expl_impl_clone_on_copy = "allow"
+float_cmp = "allow"
+fn_params_excessive_bools = "allow"
+inline_always = "allow"
+large_stack_arrays = "allow"
+literal_string_with_formatting_args = "allow"
+missing_errors_doc = "allow"
+missing_panics_doc = "allow"
+missing_safety_doc = "allow"
+module_name_repetitions = "allow"
+needless_for_each = "allow"
+needless_pass_by_value = "allow"
+nursery = { level = "warn", priority = -1 }
+option_if_let_else = "allow"
+pedantic = { level = "warn", priority = -1 }
+range_plus_one = "allow"
+redundant_pub_crate = "allow"
+redundant_type_annotations = "warn"
+significant_drop_tightening = "allow"
+similar_names = "allow"
+str_to_string = "deny"
+struct_excessive_bools = "allow"
+style = { level = "warn", priority = -1 }
+todo = "warn"
+try_err = "warn"
+tuple_array_conversions = "allow"
+undocumented_unsafe_blocks = "allow"
+unimplemented = "allow"
+unnecessary_min_or_max = "allow"
+unnecessary_wraps = "allow"
+unsafe_derive_deserialize = "allow"
+used_underscore_binding = "allow"
+useless_conversion = "allow"
+useless_nonzero_new_unchecked = "allow"
+
+[workspace.package]
+edition = "2024"
+license = "MIT or Apache-2.0"
+rust-version = "1.90"
+version = "0.1.0"
+
+[profile.release]
+codegen-units = 1
+lto = "fat"
+panic = "abort"
+
+[workspace.metadata.docs.rs]
+all-features = true

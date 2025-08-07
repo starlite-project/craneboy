@@ -1,1 +1,7 @@
 /target
+expanded.rs
+mutants.out*/
+/out
+chrome_profiler.json
+crox
+output.txt

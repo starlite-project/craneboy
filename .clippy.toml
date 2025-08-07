@@ -1,0 +1,8 @@
+allow-unwrap-in-tests = true
+avoid-breaking-exported-api = false
+doc-valid-idents = ["..", "AccessKit"]
+pass-by-value-size-limit = 256
+too-many-arguments-threshold = 16
+too-many-lines-threshold = 1000
+trivial-copy-size-limit = 256
+type-complexity-threshold = 1000
