@@ -1,3 +1,5 @@
+lints.workspace = true
+
 [package]
 edition.workspace = true
 license.workspace = true
@@ -9,6 +11,7 @@ version.workspace = true
 
 [workspace]
 resolver = "3"
+members = ["crates/core", "crates/stress_test"]
 
 [workspace.lints.rust]
 elided_lifetimes_in_paths = "warn"
