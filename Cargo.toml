@@ -1,7 +1,7 @@
 [package]
-name = "craneboy"
 edition.workspace = true
 license.workspace = true
+name = "craneboy"
 rust-version.workspace = true
 version.workspace = true
 
