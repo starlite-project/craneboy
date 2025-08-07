@@ -36,7 +36,6 @@
     "lldb.dereferencePointers": true,
     "lldb.consoleMode": "commands",
     "rust-analyzer.diagnostics.experimental.enable": true,
-    "files.insertFinalNewline": true,
     "editor.formatOnSave": false,
     "files.trimTrailingWhitespace": true,
     "editor.semanticTokenColorCustomizations": {
