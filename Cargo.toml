@@ -10,8 +10,8 @@ version.workspace = true
 [dependencies]
 
 [workspace]
+members = ["crates/core"]
 resolver = "3"
-members = ["crates/core", "crates/stress_test"]
 
 [workspace.lints.rust]
 elided_lifetimes_in_paths = "warn"
