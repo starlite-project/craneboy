@@ -1,7 +1,7 @@
 {
     "rust-analyzer.showUnlinkedFileNotification": false,
     "rust-analyzer.check.command": "clippy",
-    "rust-analyzer.cargo.buildScripts.enable": false,
+    "rust-analyzer.cargo.buildScripts.enable": true,
     "rust-analyzer.cargo.features": "all",
     "rust-analyzer.inlayHints.closureCaptureHints.enable": true,
     "rust-analyzer.inlayHints.closureReturnTypeHints.enable": "always",
