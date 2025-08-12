@@ -61,7 +61,7 @@ pub struct GPU {
 }
 
 impl GPU {
-	pub fn new() -> Self {
+	pub fn classic() -> Self {
 		Self {
 			mode: 0,
 			modeclock: 0,
@@ -108,6 +108,10 @@ impl GPU {
 			hblanking: false,
 			first_frame: false,
 		}
+	}
+
+	pub fn cgb() -> Self {
+		Self::classic()
 	}
 
 	pub fn do_cycle(&mut self, ticks: u32) {
