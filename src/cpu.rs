@@ -53,7 +53,10 @@ impl CPU {
 		})
 	}
 
-	pub fn do_cycle(&mut self) -> u32 {}
+	pub fn do_cycle(&mut self) -> u32 {
+		let ticks = self.get_ticks() * 4;
+		self.mmu.do_cycle(ticks)
+	}
 
 	fn get_ticks(&mut self) -> u32 {
 		self.update_ime();
@@ -61,45 +64,45 @@ impl CPU {
 		match self.handle_interrupt() {
 			0 => {}
 			n => return n,
-		};
+		}
 
 		if self.halted { 1 } else { self.call() }
 	}
 
-    fn handle_interrupt(&mut self) -> u32 {
-        if !self.ime && !self.halted {
-            return 0;
-        }
+	fn handle_interrupt(&mut self) -> u32 {
+		if !self.ime && !self.halted {
+			return 0;
+		}
 
-        let triggered = self.mmu.inte & self.mmu.intf & 0x1F;
-        if matches!(triggered, 0) {
-            return 0;
-        }
+		let triggered = self.mmu.inte & self.mmu.intf & 0x1F;
+		if matches!(triggered, 0) {
+			return 0;
+		}
 
-        self.halted = false;
-        if !self.ime {
-            return 0;
-        }
+		self.halted = false;
+		if !self.ime {
+			return 0;
+		}
 
-        self.ime = false;
+		self.ime = false;
 
-        let n =triggered.trailing_zeros();
-        if n >= 5 {
-            panic!("invalid interrupt triggered");
-        }
+		let n = triggered.trailing_zeros();
+		if n >= 5 {
+			panic!("invalid interrupt triggered");
+		}
 
-        self.mmu.intf &= !(1 << n);
-        let pc = self.reg.pc;
-        self.push_stack(pc);
-        self.reg.pc = 0x0040 | ((n as u16) << 3);
+		self.mmu.intf &= !(1 << n);
+		let pc = self.reg.pc;
+		self.push_stack(pc);
+		self.reg.pc = 0x0040 | ((n as u16) << 3);
 
-        4
-    }
+		4
+	}
 
-    fn push_stack(&mut self, value: u16) {
-        self.reg.sp = self.reg.sp.wrapping_sub(2);
-        self.mmu.ww(self.reg.sp, value);
-    }
+	fn push_stack(&mut self, value: u16) {
+		self.reg.sp = self.reg.sp.wrapping_sub(2);
+		self.mmu.ww(self.reg.sp, value);
+	}
 
 	fn update_ime(&mut self) {
 		self.setdi = match self.setdi {

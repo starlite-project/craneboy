@@ -2,6 +2,7 @@
 #![allow(clippy::upper_case_acronyms)]
 
 mod cpu;
+mod device;
 mod gb_mode;
 mod gpu;
 mod keypad;
